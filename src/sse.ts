@@ -6,7 +6,7 @@ export async function* transformAsyncIterable(
   for await (const message of source) {
     yield serializeSSEEvent(message);
   }
-  yield serializeSSEEvent({ event: "end", data: "Stream closed" });
+  // yield serializeSSEEvent({ event: "end", data: "Stream closed" });
 }
 
 export function serializeSSEEvent(chunk: EventMessage): string {
